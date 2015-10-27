@@ -1,5 +1,5 @@
 
-package bacafile;
+package UTS;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -14,15 +14,8 @@ import java.net.Socket;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author baskoro
- */
 public class NewClass {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         try {
             byte[] buf = new byte[10];
@@ -36,7 +29,7 @@ public class NewClass {
             int len;
             buf = new byte[10];
             len = is.read(buf);
-            nrp="USERNAME:" + buf;
+            nrp="USERNAME:" + buf + \n;
             os.write(nrp.getBytes());
             os.flush();
             
