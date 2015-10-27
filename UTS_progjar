@@ -19,12 +19,12 @@ import java.util.logging.Logger;
  */
 public class ClientUts {
     public static void main(String[] args) {
-            try (
-                Socket socket = new Socket("10.151.34.155", 6666)) {
+            try {
+                byte[] nrp = new byte[10];
+                Socket socket = new Socket("10.151.34.155", 6666);
                 InputStream is = socket.getInputStream();
                 OutputStream os = socket.getOutputStream();
                 
-                byte[] nrp = new byte[10];
                 int len;
                 nrp = new byte[10];
                 len = is.read(nrp);
